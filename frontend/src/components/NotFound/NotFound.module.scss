@@ -1,0 +1,52 @@
+@use '../../assets/scss/common/mixins' as mixin;
+
+.notFound {
+  height: 90vh;
+  @include mixin.flex(center, center, column, 40px);
+
+  &__image {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .notFound__content {
+    @include mixin.flex(center, null, column, 20px);
+  }
+
+  &__desc {
+    max-width: 490px;
+    text-align: center;
+    @include mixin.font(18px, 400, normal, var(--dark-blue));
+  }
+
+  &__btn {
+    @include mixin.button(16px 32px, null, 1px solid var(--dark-blue), 4px, var(--dark-blue), 18px, null, var(--white));
+    transition: .4s ease-in;
+
+    &:hover {
+      background: transparent;
+      color: var(--dark-blue);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .notFound__image {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notFound__image {
+    max-width: 250px;
+  }
+
+  .notFound__desc {
+    font-size: 14px;
+  }
+
+  .notFound__btn {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}

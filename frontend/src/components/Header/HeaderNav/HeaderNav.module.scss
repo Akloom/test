@@ -1,0 +1,35 @@
+@use "../../../assets/scss/common/mixins" as mixin;
+
+.header__collapse {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin: 0 0 0 auto;
+  @include mixin.flex(center, null, null, 60px)
+}
+
+@media screen and (max-width: 768px) {
+  .header__collapse {
+    max-width: 0;
+    height: 88.6vh;
+    overflow: hidden;
+    @include mixin.position(absolute, 6.5rem, 0, 0, null);
+    @include mixin.flex(start, null, null, 60px);
+    background: var(--dark-blue);
+    transition: .3s ease-in;
+  }
+
+  .collapse__active {
+    max-width: 300px;
+    overflow: hidden;
+    box-shadow: 12px 22px 22px var(--light-gray);
+  }
+
+  .nav {
+    margin: auto;
+    flex-direction: column;
+  }
+}

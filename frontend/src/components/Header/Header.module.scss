@@ -1,0 +1,15 @@
+@use "../../assets/scss/common/mixins" as mixin;
+
+.header {
+  padding: 32px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--dark-blue);
+  opacity: 0.9;
+  z-index: 3;
+
+  &__content {
+    @include mixin.flex(center, null, null, 20px);
+  }
+}

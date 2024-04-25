@@ -1,0 +1,39 @@
+@use "../../../assets/scss/common/mixins" as mixin;
+
+.nav__link {
+  position: relative;
+  @include mixin.link(13px, 700, var(--white));
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: .3s ease-in-out;
+
+  &:hover {
+    color: var(--aqua);
+  }
+
+  &::before {
+    content: "";
+    @include mixin.position(absolute, null, 0, -3px, 0);
+    width: 0;
+    height: 2px;
+    border-radius: 8px;
+    background: var(--aqua);
+    transition: .3s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+.logo__link {
+  max-width: 248px;
+
+  img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: 180px;
+  }
+}
